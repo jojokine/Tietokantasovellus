@@ -1,10 +1,13 @@
 
-
+<!--#include file="navi.html"-->
 <!DOCTYPE html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<!--#include file="navi.html"-->
 <html>
+<!--#include file="navi.html"-->
 <head>
 
+<!--#include file="navi.html"-->
 <!--#include virtual="navi.shtml" -->
 
 <div id="kirjaudu" style="background-color:#FFFFFF;height:300px;width:600px;float:left;text-align:center;">

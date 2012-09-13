@@ -38,9 +38,10 @@ a:hover,a:active
 
 <body>
 <ul>
-<li><a href="#etusivulle">Etusivulle</a></li>
-<li><a href="#lisäys">Lisäys</a></li>
-<li><a href="#omasivu">Oma Sivu</a></li>
+<ul>
+<li><a href="etusivu.html">Etusivulle</a></li>
+<li><a href="lisays.html">Lisäys</a></li>
+<li><a href="omasivu.html">Oma Sivu</a></li>
 <li><a href="#ulos/sisaan">Kirjaudu ulos / sisään</a></li>
 <li><div id="etsi" style="background-color:#000099;height:30px;">
 <form name="input" action="html_form_action.asp" method="get">
@@ -51,6 +52,18 @@ a:hover,a:active
 
 <h1>Elektroninen Satamakirja</h1>
 <h2>Uuden sataman lisäys<h2>
+
+<div id="uusisatama" style="background-color:#FFFFFF;height:300px;width:600px;float:left;">
+<h5>Sataman tiedot <h5>
+<form action="">
+<textarea name="nimi " cols="25" rows="1"> Nimi </textarea><br />
+<textarea name="käyntisatamanumero " cols="25" rows="1"> Käyntisatamanumero </textarea><br />
+<textarea name="karttalehti" cols="25" rows="1"> Karttalehti </textarea><br />
+<textarea name="palvelut" cols="25" rows="5"> Palvelut </textarea><br />
+<textarea name="kotisivu" cols="25" rows="1"> Kotisivu </textarea><br />
+<button type="submit">Tallena tiedot</button> 
+</form> </p>
+</div>
 
 
 </body>

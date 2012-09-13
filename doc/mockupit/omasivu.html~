@@ -1,6 +1,7 @@
 
 
 <!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <html>
 <head>
 <style type="text/css">
@@ -64,6 +65,7 @@ Veneen tyyppi <input type="text" name="veneentyyppi" /> <br />
 <form action="">
 <input type="checkbox" name="naytaTiedot" value="Tiedot" /> Näytä tiedot muille käyttäjille<br />
 </form> </p>
+<button type="submit">Tallena tiedot</button> 
 </div>
 
 

@@ -5,7 +5,7 @@
 <html>
 <head>
 
-<?php include('navi.php'); ?>
+<?php require_once('navi.php'); ?>
 
 <div id="uusisatama" style="background-color:#FFFFFF;height:600px;width:600px;float:left;">
 <h2>Nimi<h2>

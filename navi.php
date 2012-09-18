@@ -37,10 +37,10 @@ a:hover,a:active
 
 <body>
 <ul>
-<li><a href="etusivu.html">Etusivulle</a></li>
-<li><a href="lisays.html">Lisäys</a></li>
-<li><a href="omasivu.html">Oma Sivu</a></li>
-<li><a href="kirjaudu.html">Kirjaudu ulos / sisään</a></li>
+<li><a href="etusivu.php">Etusivulle</a></li>
+<li><a href="lisays.php">Lisäys</a></li>
+<li><a href="omasivu.php">Oma Sivu</a></li>
+<li><a href="kirjaudu.php">Kirjaudu ulos / sisään</a></li>
 <li><div id="etsi" style="background-color:#000099;height:30px;">
 <form name="input" action="html_form_action.asp" method="get">
 <input type="text" name="satama" />

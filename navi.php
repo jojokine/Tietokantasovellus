@@ -45,14 +45,9 @@ a:hover,a:active
 <li><a href="omasivu.php">Oma Sivu</a></li>
 <li><a href="kirjaudu.php">Kirjaudu ulos / sisään</a></li>
 <li><div id="etsi" style="background-color:#000099;height:30px;font-weight:bold;font-size:18px;color:#FFFFFF;">
- <form name="search" method="post" action="hakutulokset.php">
- Etsi Satamaa: <input type="text" name="find" /> 
- <Select NAME="field">
- <Option VALUE="nimi">Nimellä</option>
- <Option VALUE="käyntisatamanumero">Käyntisatamanumerolla</option>
- <Option VALUE="karttasivu">Karttalehdeltä</option>
- </Select>
-  <input type="submit" name="search" value="Hae" />
+ <form method="POST" action="hakutulokset.php">
+ Etsi Satamaa: <input type="text" name="etsi" /> 
+ <input type="submit" value="Etsi" />
  </form>
 </ul>
 

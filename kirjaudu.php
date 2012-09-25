@@ -1,9 +1,3 @@
-
-
-<!DOCTYPE html>
-<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-<html>
-<head>
 <?php require_once('navi.php'); ?>
 
 <div id="kirjaudu" style="background-color:#FFFFFF;height:300px;width:600px;float:left;text-align:center;">
@@ -21,7 +15,9 @@
 
 <div id="rekisteröidy" style="background-color:#FFFFFF;height:300px;width:600px;float:left;text-align:center;">
 <h3>Etkö ole rekisteröitynyt?<h3>
-<button type="button">Rekisteröidy käyttäjäksi tästä!</button> <br />
+<FORM METHOD="LINK" ACTION="rekisteroidy.php">
+<INPUT TYPE="submit" VALUE="Rekisteröidy käyttäjäksi tästä!">
+</FORM>
 </div>
 
 </body>

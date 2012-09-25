@@ -2,7 +2,7 @@
 
 try {
     $yhteys = new PDO("pgsql:host=localhost;dbname=jojokine",
-                      "jojokine", "Kissa1");
+                      "jojokine", "Kiss42012");
 } catch (PDOException $e) {
     die("VIRHE: " . $e->getMessage());
 }

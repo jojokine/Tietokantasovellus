@@ -8,18 +8,18 @@
 
 
 
-ul
+ul.navi
 {
 list-style-type:none;
 margin:0;
 padding:0;
 overflow:hidden;
 }
-li
+ul.navi li
 {
 float:left;
 }
-a:link,a:visited
+ul.navi a:link,ul.navi a:visited
 {
 display:block;
 width:300px;
@@ -33,19 +33,18 @@ padding:7px;
 text-decoration:none;
 text-transform:uppercase;
 }
-a:hover,a:active
 
 </style>
 </head>
 
 <body>
-<ul>
+<ul class="navi" >
 <li><a href="etusivu.php">Etusivulle</a></li>
 <li><a href="lisays.php">Lisäys</a></li>
 <li><a href="omasivu.php">Oma Sivu</a></li>
 <li><a href="kirjaudu.php">Kirjaudu ulos / sisään</a></li>
 <li><div id="etsi" style="background-color:#000099;height:30px;font-weight:bold;font-size:18px;color:#FFFFFF;">
- <form method="POST" action="hakutulokset.php">
+ <form method="GET" action="hakutulokset.php">
  Etsi Satamaa: <input type="text" name="etsi" /> 
  <input type="submit" value="Etsi" />
  </form>
@@ -53,5 +52,3 @@ a:hover,a:active
 
 <h1>Elektroninen Satamakirja</h1>
 
-</body>
-</html>

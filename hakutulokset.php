@@ -1,23 +1,28 @@
- <?php
-  echo "<h2>Haun tulokset</h2><p>"; 
+<?php
   include("yhteys.php");
 
-  $haku = $_POST['etsi'];
+  $haku = $_GET['etsi'];
    
-  $kysely = $yhteys->prepare("SELECT * FROM satama WHERE nimi LIKE '$haku'");
-  $kysely->execute();
-
-	echo "<table border>";
-	while ($rivi = $kysely->fetch()) {
-	    echo "<tr>";
-	    echo "<td>" . $rivi["käyntisatamanumero"] . "</td>";
-	    echo "<td>" . $rivi["nimi"] . "</td>";
-	    echo "<td>" . $rivi["karttasivu"] . "</td>";
-	    echo "</tr>";
-	}
-
-   echo "</table>";
- 
+  $kysely = $yhteys->prepare("SELECT * FROM satama WHERE nimi ILIKE ?");
+  $kysely->execute(array("%$haku%"));
 ?> 
+<?php require_once('navi.php'); ?> 
+
+<h2>Haun tulokset</h2>
+ 
+	 <table border>
+	<?php while ($rivi = $kysely->fetch())  { ?>
+
+	    <tr>
+	    <td> <?php echo $rivi["käyntisatamanumero"] ?> </td>
+	    <td> <?php echo $rivi["nimi"] ?> </td>
+	    <td> <?php echo $rivi["karttasivu"] ?> </td>
+ 	    <td> <a href="satamanTiedot.php?satama=<?php echo $rivi["käyntisatamanumero"] ?>">Näytä tiedot!</a> 	    </td>
+	    </tr>
+	<?php } ?>
+
+   	</table>
+ 
+
 
 

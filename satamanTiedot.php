@@ -1,37 +1,47 @@
+<?php 
+  include("yhteys.php");
 
-
-<!DOCTYPE html>
-<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-<html>
-<head>
+  $haku = $_GET['satama'];
+       
+  $kysely = $yhteys->prepare("SELECT * FROM satama WHERE käyntisatamanumero = ?");
+  $kysely->execute(array($haku));
+  $satama = $kysely->fetch();
+?>
 
 <?php require_once('navi.php'); ?>
 
-<div id="satama" style="background-color:#FFFFFF;height:600px;width:600px;float:left;">
-<h2>Sataman tiedot<h2>
- <?php 
-  include("yhteys.php");
 
-  $haku = $_POST['satama'];
-   // $haku = "Kaunissaari"
-   
-  $kysely = $yhteys->prepare("SELECT * FROM satama WHERE nimi = '$haku'");
-  $kysely->execute();
 
-	echo "<table border>";
-	while ($rivi = $kysely->fetch()) {
-	    echo "<tr>";
-	    echo "<td>" . $rivi["käyntisatamanumero"] . "</td>";
-	    echo "<td>" . $rivi["nimi"] . "</td>";
-	    echo "<td>" . $rivi["karttasivu"] . "</td>";
-	    echo "<td>" . $rivi["kiinnitys"] . "</td>";
-	    echo "<td>" . $rivi["palvelut"] . "</td>";
-	    echo "</tr>";
-	}
-//  käyntisatamanumero |    nimi     |           kiinnitys           |              palvelut               | karttasivu 
-   echo "</table>";
+<div id="satama" style="background-color:#FFFFFF;height:600px;width:1200px;float:left;">
+<h2>Sataman tiedot:<h2>
  
-?> 
+<dl>
+	<dt>Käyntisatamanumero:</dt>
+		<dd><?php echo $satama["käyntisatamanumero"] ?> </dd>
+	<dt>Sataman nimi:</dt>
+		<dd><?php echo $satama["nimi"] ?> </dd>
+	<dt>Karttalehti:</dt>
+		<dd><?php echo $satama["karttasivu"] ?> </dd>
+	<dt>Kiinnitystapa:</dt>
+		<dd><?php echo $satama["kiinnitys"] ?> </dd>
+	<dt>Palvelut:</dt>
+		<dd><?php echo $satama["palvelut"] ?> </dd>
+	<dt>Kotisivu:</dt>
+		<dd> </dd><a href="<?php echo $satama["www"] ?>"><?php echo $satama["www"] ?></a>
+</dl>
+
+<?php
+// $tiedot.="Käyntisatamanumero: ".$rivi["käyntisatamanumero"]. "\n";
+// $tiedot.="Sataman nimi: ".$rivi["nimi"]. "\n";
+// $tiedot.="Karttasivu: ".$rivi["karttasivu"]. "\n";
+// $tiedot.="Kiinnitystapa: ".$rivi["kiinnitys"]. "\n";
+// $tiedot.="Palvelut: ".$rivi["palvelut"]. "\n";
+
+
+// var_dump($satama)
+?>
+ 
+ 
 </div>
 
 

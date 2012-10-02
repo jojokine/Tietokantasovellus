@@ -1,7 +1,13 @@
 <?php require_once('navi.php'); ?>
 
+<?php 
+if(isset($_SESSION['tunnus'])){
+header("location:kirjauduUlos.php");
+}
+?>
+
 <div id="kirjaudu" style="background-color:#FFFFFF;height:300px;width:600px;float:left;text-align:center;">
-<form action="kirjautuja.php?" method="POST">
+<form method="POST" action="kirjautuja.php">
   <fieldset>
     <legend>Kirjaudu sisään</legend>
     <label for="tunnus">Käyttäjätunnus:</label>

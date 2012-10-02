@@ -5,10 +5,11 @@
    
   $kysely = $yhteys->prepare("SELECT * FROM satama WHERE nimi ILIKE ?");
   $kysely->execute(array("%$haku%"));
-?> 
-<?php require_once('navi.php'); ?> 
+
+  require_once('navi.php'); ?> 
 
 <h2>Haun tulokset</h2>
+
  
 	 <table border>
 	<?php while ($rivi = $kysely->fetch())  { ?>

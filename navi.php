@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
@@ -51,4 +53,14 @@ text-transform:uppercase;
 </ul>
 
 <h1>Elektroninen Satamakirja</h1>
+
+<?php
+if(isset($_SESSION['tunnus'])){
+echo "Olet kirjautunut, " . $_SESSION['tunnus'];
+}
+?>
+
+
+
+
 

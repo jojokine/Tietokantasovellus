@@ -9,24 +9,19 @@ $password2 = $_POST['salasanaVarm'];
 
 
   $rekisterointi = $yhteys->prepare("INSERT INTO kayttaja (username, email, password) VALUES (?, ?, ?);");
-	if($rekisterointi->execute(array($rekisteroitava, $email, $password))){ 
+  $tila = $rekisterointi->execute(array($rekisteroitava, $email, $password));
+
+	if ($tila)
+	  { 
 		echo "Rekisteröityminen onnistui! Sinut ohjataan automaattisesti omalle sivullesi!";
-		sleep(10);
-		header("omasivu.php");
-		} 
-	else{
-		echo "Rekisteröityminen epäonnistui!";
-		
+		?>
+		<head>
+		<meta http-equiv="refresh" content="5; URL=omasivu.php">
+		</head>
+		<?php
 		}
-
-// var_dump($tila)
-
-	//if ($tila){
-	//	echo "Rekisteröityminen onnistui! Sinut ohjataan automaattisesti omalle sivullesi!";
-	//	sleep(10);
-	//	header("omasivu.php");
-	//}
-
-
-
+ 	else
+	  {
+		echo "Rekisteröityminen epäonnistui!";		
+		}
 ?>

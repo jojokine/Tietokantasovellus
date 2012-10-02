@@ -1,10 +1,10 @@
-
-
-<!DOCTYPE html>
-<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-<html>
-<head>
 <?php require_once('navi.php'); ?>
+
+<?php 
+if(empty($_SESSION['tunnus'])){
+header("location:kirjaudu.php");
+}
+?>
 
 <h2>Tervetuloa online satamakirjaan, käyttäjä!<h2>
 

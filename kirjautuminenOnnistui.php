@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(empty($_SESSION['tunnus'])){
+if(empty($_SESSION['id'])){
 header("location:kirjaudu.php");
 }
 ?>

@@ -1,12 +1,12 @@
 <?php require_once('navi.php'); ?>
 
-<?php 
-if(isset($_SESSION['tunnus'])){
-header("location:kirjauduUlos.php");
-}
-?>
+<div id="kirjauduUlos" style="background-color:#FFFFFF;height:100px;width:600px;text-align:center;">
+<FORM METHOD="LINK" ACTION="kirjauduUlos.php">
+<INPUT TYPE="submit" VALUE="Kirjaudu ulos">
+</FORM>
+</div>
 
-<div id="kirjaudu" style="background-color:#FFFFFF;height:300px;width:600px;float:left;text-align:center;">
+<div id="kirjaudu" style="background-color:#FFFFFF;height:100px;width:600px;text-align:center;">
 <form method="POST" action="kirjautuja.php">
   <fieldset>
     <legend>Kirjaudu sisään</legend>
@@ -19,7 +19,7 @@ header("location:kirjauduUlos.php");
 </form>
 </div>
 
-<div id="rekisteröidy" style="background-color:#FFFFFF;height:300px;width:600px;float:left;text-align:center;">
+<div id="rekisteröidy" style="background-color:#FFFFFF;height:300px;width:600px;text-align:center;">
 <h3>Etkö ole rekisteröitynyt?<h3>
 <FORM METHOD="LINK" ACTION="rekisteroidy.php">
 <INPUT TYPE="submit" VALUE="Rekisteröidy käyttäjäksi tästä!">

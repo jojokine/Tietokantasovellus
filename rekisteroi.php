@@ -7,21 +7,34 @@ $email = $_POST['sahkoposti'];
 $password = $_POST['salasana'];
 $password2 = $_POST['salasanaVarm'];
 
+if ($password == $password2){
+
+$encrypted_mypassword = md5($password);
+
 
   $rekisterointi = $yhteys->prepare("INSERT INTO kayttaja (username, email, password) VALUES (?, ?, ?);");
-  $tila = $rekisterointi->execute(array($rekisteroitava, $email, $password));
+  $tila = $rekisterointi->execute(array($rekisteroitava, $email, $encrypted_mypassword));
 
 	if ($tila)
 	  { 
-		echo "Rekisteröityminen onnistui! Sinut ohjataan automaattisesti omalle sivullesi!";
+		echo "Rekisteröityminen onnistui! Voit nyt kirjautua sisään palveluun!";
 		?>
 		<head>
-		<meta http-equiv="refresh" content="5; URL=omasivu.php">
+		<meta http-equiv="refresh" content="2; URL=kirjaudu.php">
 		</head>
 		<?php
 		}
  	else
 	  {
 		echo "Rekisteröityminen epäonnistui!";		
-		}
+		} }
+
+else{
+echo "Syöttämäsi salasanat eivät täsmänneet!";
+?>
+		<head>
+		<meta http-equiv="refresh" content="2; URL=rekisteroidy.php">
+		</head>
+		<?php
+}
 ?>

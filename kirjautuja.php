@@ -3,13 +3,23 @@ session_start();
 include("yhteys.php");
 
 $userName = $_POST['tunnus']; 
-$password = $_POST['salasana']; 
+$password = $_POST['salasana'];
+$encrypted_mypassword = md5($password); 
 
   $kysely = $yhteys->prepare("SELECT * FROM kayttaja WHERE username = ? AND password = ?");
-  $kysely->execute(array($userName, $password));
-  $kayttaja = $kysely->fetchAll();
+  $kysely->execute(array($userName, $encrypted_mypassword));
+  $kayttaja = $kysely->fetchObject();
+ // var_dump($kayttaja);
+//die();
 
-if( count($kayttaja) != 1) {
+if($kayttaja){
+
+    //var_dump($kayttaja->kayttajaid);
+    //echo "user logged in";
+$_SESSION['id'] = $kayttaja->kayttajaid;
+header("location:kirjautuminenOnnistui.php");
+}  
+else {
     echo "Kirjautuinen epäonnistui! Sinut ohjatan takaisin kirjautumissivulle.";
 ?>
 	<head>
@@ -17,10 +27,6 @@ if( count($kayttaja) != 1) {
 	</head>
 <?php
 	
-} else {
-    echo "user logged in";
-$_SESSION['tunnus'] = $userName;
-header("location:kirjautuminenOnnistui.php");
 }
 ?>
 

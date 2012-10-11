@@ -1,9 +1,10 @@
-CREATE TABLE satama (Kayntisatamanumero INTEGER PRIMARY KEY,
-Karttalehti INTEGER,
-Nimi VARCHAR(32) NOT NULL,
-Palvelut VARCHAR(250) ,
-Kotisivu VARCHAR(100),
-ViimeksiMuokannutKayttajaID INTEGER FOREIGN KEY NOT NULL
+CREATE TABLE satama (kayntisatamanumero INTEGER PRIMARY KEY,
+nimi VARCHAR(32) NOT NULL,
+kiinnitys VARCHAR(250) ,
+palvelut VARCHAR(250) ,
+karttasivu INTEGER,
+www VARCHAR(100),
+ViimeksiMuokannutKayttajaid INTEGER NOT NULL
 )
 
 CREATE TABLE chekin (ChekinID INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -12,12 +13,16 @@ Kayntisatamanumero INTEGER NOT NULL FOREIGN KEY,
 Muokkausaika TIMESTAMP NOT NULL DEFAULT GETDATE()
 )
 
-CREATE TABLE kayttaja (KayttajaID INTEGER AUTO_INCREMENT PRIMARY KEY,
-Nimi VARCHAR(32) NOT NULL,
-VeneenTyyppi VARCHAR(32),
-VeneenNimi VARCHAR(32),
-VeneenPituus INTEGER,
-VeneenSyvays INTEGER
+CREATE TABLE kayttaja (KayttajaID SERIAL ,
+Nimi VARCHAR,
+VeneenTyyppi VARCHAR,
+VeneenNimi VARCHAR,
+VeneenPituus VARCHAR,
+VeneenSyvays VARCHAR,
+username varchar NOT NULL,
+password varchar NOT NULL,
+email varchar NOT NULL,
+nayta boolean
 )
 
 CREATE TABLE arvostelu (ArvosteluID INTEGER AUTO_INCREMENT PRIMARY KEY, 

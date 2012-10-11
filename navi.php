@@ -1,5 +1,7 @@
 <?php
 session_start();
+include("yhteys.php");
+include("haeKayttaja.php");
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +57,14 @@ text-transform:uppercase;
 <h1>Elektroninen Satamakirja</h1>
 
 <?php
-if(isset($_SESSION['tunnus'])){
-echo "Olet kirjautunut, " . $_SESSION['tunnus'];
+if(isset($_SESSION['id'])){
+
+//$kysely = $yhteys->prepare("SELECT * FROM kayttaja WHERE kayttajaid = ?");
+  //$kysely->execute(array($_SESSION['id']));
+  //$kayttaja = $kysely->fetchObject();
+
+echo "Olet kirjautunut, " . $kayttaja->username . ". ";
+
 }
 ?>
 

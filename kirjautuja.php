@@ -20,7 +20,7 @@ $_SESSION['id'] = $kayttaja->kayttajaid;
 header("location:kirjautuminenOnnistui.php");
 }  
 else {
-    echo "Kirjautuinen epäonnistui! Sinut ohjatan takaisin kirjautumissivulle.";
+    echo "Kirjautuminen epäonnistui! Sinut ohjataan takaisin kirjautumissivulle.";
 ?>
 	<head>
 	<meta http-equiv="refresh" content="2; URL=kirjaudu.php">

@@ -1,8 +1,7 @@
 <?php 
 session_start();
 require('onkoKirjauduttu.php'); 
-
-include("yhteys.php");
+include('haeKayttaja.php');
 
 $kayntisatamanumero = $_POST["kayntisatamanumero"];
 $nimi = $_POST["nimi"];
@@ -10,11 +9,6 @@ $kiinnitys = $_POST["kiinnitys"];
 $palvelut = $_POST["palvelut"];
 $karttasivu  = $_POST["karttasivu"];
 $www = $_POST["www"];
-
-  $kysely = $yhteys->prepare("SELECT * FROM kayttaja WHERE kayttajaid = ?");
-  $kysely->execute(array($_SESSION['id']));
-  $kayttaja = $kysely->fetchObject();
-
 
 	$sql = "UPDATE satama SET nimi=?, kiinnitys=?, palvelut=?, karttasivu=?, www=?, viimeksimuokannutkayttajaid=? WHERE kayntisatamanumero=?";
 	$paivitys = $yhteys->prepare($sql);

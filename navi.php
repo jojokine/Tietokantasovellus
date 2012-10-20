@@ -26,7 +26,7 @@ float:left;
 ul.navi a:link,ul.navi a:visited
 {
 display:block;
-width:300px;
+width:200px;
 height:20px;
 font-weight:bold;
 font-size:18px;
@@ -61,7 +61,7 @@ else{
 echo "Kirjaudu";
 }
 ?></a></li>
-<li><div id="etsi" style="background-color:#000099;height:30px;font-weight:bold;font-size:18px;color:#FFFFFF;">
+<li><div id="etsi" style="background-color:#000099;height:34px;font-weight:bold;font-size:18px;color:#FFFFFF;">
  <form method="GET" action="hakutulokset.php">
  Etsi Satamaa: <input type="text" name="etsi" /> 
  <input type="submit" value="Etsi" />

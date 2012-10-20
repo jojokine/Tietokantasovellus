@@ -1,5 +1,6 @@
 <?php
 require_once('navi.php');
+require('onkoKirjauduttu.php'); 
 
 $nimi = $_POST['nimi'];
 $veneentyyppi = $_POST['veneentyyppi'];

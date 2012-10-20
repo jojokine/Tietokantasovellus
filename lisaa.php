@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require('onkoKirjauduttu.php'); 
-}
+
 
 include("yhteys.php");
 

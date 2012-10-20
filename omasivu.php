@@ -4,18 +4,9 @@ if($kayttaja->nayta){
 $napinTila = "checked=";
 }
 ?>
-<h2>Tervetuloa online satamakirjaan!<h2>
-
-<div id="lisaa" style="background-color:#FFFFFF;height:20px;width:600px;float:left;">
-<FORM METHOD="LINK" ACTION="lisays.php">
-<INPUT TYPE="submit" VALUE="Lisää uusi satama">
-</FORM>
-</div>
-<br />
-
 
 <div id="tiedot" style="background-color:#FFFFFF;height:300px;width:700px;float:left;">
-<h5>Omat tiedot <h5>
+<h3>Omat tiedot <h3>
 <legend>Voit päivittää tietojasi kirjoittamalla tiedon kenttään ja tallentamalla tiedot</legend>
 <br />
 <form method="POST" action="paivitaOmat.php">
@@ -30,6 +21,9 @@ Sähköpostiosoite: <input type="text" name="email" VALUE="<?php echo $kayttaja-
 <br />
 <input type="submit" value="Tallenna tiedot" /> 
 </form> </p>
+<form method="POST" action="vaihdaSalasana.php">
+	<input type="submit" value="Vaihda salasana" >
+</form>
 </div>
 </body>
 </html>

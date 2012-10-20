@@ -1,8 +1,9 @@
 <?php require_once('navi.php'); ?>
 
 <div id="uusikayttaja" style="background-color:#FFFFFF;height:600px;width:600px;float:left;">
-<h3>Syötä pydetyt tiedot! <h3>
-<p>- Voit muokata ja lisätä muita tietoja oalla sivullasi rekisteröidyttyäsi!</p>
+<h3>Syötä pydetyt tiedot <h3>
+<p>- Voit muokata ja lisätä muita tietoja oalla sivullasi rekisteröidyttyäsi.<br>
+Kaikki tietokentät ovat pakollisia!</p>
 <form method="POST" action="rekisteroi.php">
 Käyttäjänimi: <input type=text name="kayttajanimi" /><br>
 Sähköpostiosoite: <input type=text name="sahkoposti" /><br>

@@ -24,10 +24,15 @@ echo "Sähköpostiosoite pitää antaa!";
 		</head>
 		<?php
 }else{
+	//$pkid = $kayttaja->kayttajaid;
+	//$sql = "UPDATE kayttaja SET nimi='$nimi', veneentyyppi='$veneentyyppi', veneennimi='$veneennimi', veneenpituus='$veneenpituus', //veneensyvays='$veneensyvays', email='$email', nayta='$nayta' WHERE kayttajaid='$pkid'";
+	//$paivitys = $yhteys->prepare($sql);
+	//$tila = $paivitys->execute();
+
 	$pkid = $kayttaja->kayttajaid;
-	$sql = "UPDATE kayttaja SET nimi='$nimi', veneentyyppi='$veneentyyppi', veneennimi='$veneennimi', veneenpituus='$veneenpituus', veneensyvays='$veneensyvays', email='$email', nayta='$nayta' WHERE kayttajaid='$pkid'";
+	$sql = "UPDATE kayttaja SET nimi=?, veneentyyppi=?, veneennimi=?, veneenpituus=?, veneensyvays=?, email=?, nayta=? WHERE kayttajaid=?";
 	$paivitys = $yhteys->prepare($sql);
-	$tila = $paivitys->execute();
+	$tila = $paivitys->execute(array($nimi, $veneentyyppi, $veneennimi, $veneenpituus, $veneensyvays, $email, $nayta, $pkid));
 
 	if ($tila){
 		echo "Tietojen päivitys onnistui! Sinut ohjataan omalle sivullesi.";

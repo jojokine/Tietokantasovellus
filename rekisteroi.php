@@ -7,7 +7,7 @@ $email = $_POST['sahkoposti'];
 $password = $_POST['salasana'];
 $password2 = $_POST['salasanaVarm'];
 
-if ($password == $password2){
+if ($password == $password2 && !empty($email) && !empty($rekisteroitava)){
 
 $encrypted_mypassword = md5($password);
 
@@ -28,8 +28,24 @@ $encrypted_mypassword = md5($password);
 	  {
 		echo "Rekisteröityminen epäonnistui!";		
 		} }
+if (empty($email)){
+echo "Et syöttänyt sähköpostiosoitettasi!";
+?>
+		<head>
+		<meta http-equiv="refresh" content="2; URL=rekisteroidy.php">
+		</head>
+		<?php
+}
+if (empty($rekisteroitava)){
+echo "Et syöttänyt käyttäjänimeä!";
+?>
+		<head>
+		<meta http-equiv="refresh" content="2; URL=rekisteroidy.php">
+		</head>
+		<?php
+}
 
-else{
+else if ($password != $password2){
 echo "Syöttämäsi salasanat eivät täsmänneet!";
 ?>
 		<head>

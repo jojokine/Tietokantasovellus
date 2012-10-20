@@ -53,7 +53,7 @@ exit;
 
 if(empty($satama)){
 	$kysely = $yhteys->prepare($sql);
-	$kysely->execute(array($kayntisatamanumero, $nimi, $kiinnitys, $palvelut, $karttasivu, $www, 		$kayttaja->kayttajaid));
+	$kysely->execute(array($kayntisatamanumero, $nimi, $kiinnitys, $palvelut, $karttasivu, $www, $kayttaja->kayttajaid));
 	echo "Lisäys onnistui! Sinut ohjataan sataman tietosivulle.";
 	?>
 	<head>

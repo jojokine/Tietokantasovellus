@@ -16,7 +16,7 @@
 
 
 <div id="satama" style="background-color:#FFFFFF;height:600px;width:1200px;">
-<h2>Sataman tiedot:<h2>
+<h3>Sataman tiedot:<h3>
  
 <dl>
 	<dt>Käyntisatamanumero:</dt>
@@ -34,6 +34,10 @@
 	<dt>Viimeisenä sataman tietoja muokannut käyttäjä:</dt>
 		<dd><a href="kayttaja.php?kayttajaid=<?php echo $muokkaaja->kayttajaid; ?>"><?php echo $muokkaaja->nimi; ?></a>  </dd>
 </dl>
+<form method="POST" action="muokkaa.php">
+	<input type="hidden" name="satama" value="<?php echo $satama["kayntisatamanumero"] ?>" >
+	<input type="submit" value="Muokkaa satamaa" >
+</form>
 </div>
 </body>
 </html>

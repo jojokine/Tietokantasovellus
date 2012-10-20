@@ -46,7 +46,21 @@ text-transform:uppercase;
 <li><a href="etusivu.php">Etusivulle</a></li>
 <li><a href="lisays.php">Lisäys</a></li>
 <li><a href="omasivu.php">Oma Sivu</a></li>
-<li><a href="kirjaudu.php">Kirjaudu ulos / sisään</a></li>
+<li><a href="<?php
+if(isset($_SESSION['id'])){
+echo "kirjauduUlos.php";
+}
+else{
+echo "kirjaudu.php";
+}
+?>"><?php
+if(isset($_SESSION['id'])){
+echo "Kirjaudu ulos";
+}
+else{
+echo "Kirjaudu";
+}
+?></a></li>
 <li><div id="etsi" style="background-color:#000099;height:30px;font-weight:bold;font-size:18px;color:#FFFFFF;">
  <form method="GET" action="hakutulokset.php">
  Etsi Satamaa: <input type="text" name="etsi" /> 
@@ -54,19 +68,18 @@ text-transform:uppercase;
  </form>
 </ul>
 
-<h1>Elektroninen Satamakirja</h1>
-
+<div id="kirj" style="background-color:#FFFFFF;height:50x;width:700px;">
 <?php
 if(isset($_SESSION['id'])){
-
-//$kysely = $yhteys->prepare("SELECT * FROM kayttaja WHERE kayttajaid = ?");
-  //$kysely->execute(array($_SESSION['id']));
-  //$kayttaja = $kysely->fetchObject();
-
 echo "Olet kirjautunut, " . $kayttaja->username . ". ";
-
 }
 ?>
+<h2>Elektroninen Satamakirja</h2>
+</div>
+
+
+
+
 
 
 

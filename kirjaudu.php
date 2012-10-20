@@ -1,11 +1,5 @@
 <?php require_once('navi.php'); ?>
 
-<div id="kirjauduUlos" style="background-color:#FFFFFF;height:100px;width:600px;text-align:center;">
-<FORM METHOD="LINK" ACTION="kirjauduUlos.php">
-<INPUT TYPE="submit" VALUE="Kirjaudu ulos">
-</FORM>
-</div>
-
 <div id="kirjaudu" style="background-color:#FFFFFF;height:100px;width:600px;text-align:center;">
 <form method="POST" action="kirjautuja.php">
   <fieldset>

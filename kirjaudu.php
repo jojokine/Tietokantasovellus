@@ -4,10 +4,8 @@
 <form method="POST" action="kirjautuja.php">
   <fieldset>
     <legend>Kirjaudu sisään</legend>
-    <label for="tunnus">Käyttäjätunnus:</label>
-    <input type="text" name="tunnus" id="tunnus" />
-    <label for="salasana">Salasana:</label>
-    <input type="password" name="salasana" id="salasana" />
+    Käyttäjätunnus: <input type="text" name="tunnus" id="tunnus" /> <br />
+    Salasana: <input type="password" name="salasana" id="salasana" /> <br />
     <input type="submit" value="Kirjaudu" />
   </fieldset>
 </form>

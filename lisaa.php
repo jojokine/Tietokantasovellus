@@ -11,6 +11,8 @@ $kiinnitys = $_POST["kiinnitys"];
 $palvelut = $_POST["palvelut"];
 $karttasivu  = $_POST["karttasivu"];
 $www = $_POST["kotisivu"];
+$lat = $_POST["lat"];
+$lng = $_POST["lng"];
 
 $kysely = $yhteys->prepare("SELECT * FROM kayttaja WHERE kayttajaid = ?");
   $kysely->execute(array($_SESSION['id']));
@@ -18,8 +20,8 @@ $kysely = $yhteys->prepare("SELECT * FROM kayttaja WHERE kayttajaid = ?");
 
 // var_dump($kayttaja);
 
-$sql = "INSERT INTO satama (kayntisatamanumero, nimi, kiinnitys, palvelut, karttasivu, www, viimeksimuokannutkayttajaid)
-        VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO satama (kayntisatamanumero, nimi, kiinnitys, palvelut, karttasivu, www, viimeksimuokannutkayttajaid, lat, lng)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 
 	
@@ -53,7 +55,7 @@ exit;
 
 if(empty($satama)){
 	$kysely = $yhteys->prepare($sql);
-	$kysely->execute(array($kayntisatamanumero, $nimi, $kiinnitys, $palvelut, $karttasivu, $www, $kayttaja->kayttajaid));
+	$kysely->execute(array($kayntisatamanumero, $nimi, $kiinnitys, $palvelut, $karttasivu, $www, $kayttaja->kayttajaid, $lat, $lng));
 	echo "Lisäys onnistui! Sinut ohjataan sataman tietosivulle.";
 	?>
 	<head>

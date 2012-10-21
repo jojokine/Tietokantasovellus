@@ -7,12 +7,14 @@ require('onkoKirjauduttu.php');
   </head>
   <body>
     <form action="lisaa.php" method="post">
-      <p>Käyntisatamanumero: <br> <input type="text" name="kayntisatamanumero"></p>
-      <p>Nimi: <br> <input type="text" name="nimi"></p>
-      <p>Kiinnitystapa/tavat: <br> <input type="text" name="kiinnitys"></p>
-      <p>Palvelut: <br> <input type="text" name="palvelut"></p>
-      <p>Karttasivu: <br> <input type="text" name="karttasivu"></p>
-      <p>WWW-sivu: <br> <input type="text" name="kotisivu"></p>   
+	<p>Käyntisatamanumero: <br> <input type="text" name="kayntisatamanumero"></p>
+	<p>Nimi: <br> <input type="text" name="nimi"></p>
+	<p>Kiinnitystapa/tavat: <br> <input type="text" name="kiinnitys"></p>
+	<p>Palvelut: <br> <input type="text" name="palvelut"></p>
+	<p>Karttasivu: <br> <input type="text" name="karttasivu"></p>
+	<p>WWW-sivu: <br> <input type="text" name="kotisivu"></p>  
+	<p>Sijainti(lat.): <input type="text" name="lat" ></p> 
+	<p>Sijainti(lng.): <input type="text" name="lng"></p> 
 
       <p><input type="submit" value="Lisää"></p>
     </form>

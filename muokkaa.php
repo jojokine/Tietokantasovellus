@@ -19,9 +19,19 @@ Karttalehti: <input type="text" name="karttasivu" VALUE="<?php echo $satama->kar
 Kiinnitystapa: <input type="text" name="kiinnitys" VALUE="<?php echo $satama->kiinnitys; ?>" /> <br />
 Palvelut: <input type="text" name="palvelut" VALUE="<?php echo $satama->palvelut; ?>" /> <br />
 Kotisivu: <input type="text" name="www" VALUE="<?php echo $satama->www; ?>" /> <br />
+Sijainti(lat.): <input type="text" name="lat" /> <br />
+Sijainti(lng.): <input type="text" name="lng" /> <br />
 <br />
 <input type="submit" value="Tallenna tiedot" /> 
 </form> </p>
 </div>
+<div id="kuva" style="background-color:#FFFFFF;height:300px;width:700px;float:left;">
+  <form enctype="multipart/form-data" action="image.php" method="POST">
+  <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+  <input type="hidden" name="name" size="25" length="25" value="<?php echo $satama->kayntisatamanumero; ?>">
+   Lisää satamalle kuva: <input name="userfile" type="file" size="25"/>
+
+  <input type="submit" value="Lisää kuva" />
+</form>
 </body>
 </html>

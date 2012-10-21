@@ -1,5 +1,7 @@
 CREATE TABLE satama (kayntisatamanumero INTEGER PRIMARY KEY,
 nimi VARCHAR(32) NOT NULL,
+lat VARCHAR,
+lng VARCHAR,
 kiinnitys VARCHAR(250) ,
 palvelut VARCHAR(250) ,
 karttasivu INTEGER,
@@ -25,9 +27,10 @@ email varchar NOT NULL,
 nayta boolean
 )
 
-CREATE TABLE arvostelu (ArvosteluID INTEGER AUTO_INCREMENT PRIMARY KEY, 
-Kayntisatamanumero INTEGER NOT NULL FOREIGN KEY,
-KayttajaID INTEGER NOT NULL FOREIGN KEY,
+CREATE TABLE arvostelu (ArvosteluID SERIAL, 
+Kayntisatamanumero INTEGER NOT NULL,
+KayttajaID INTEGER NOT NULL,
+kommentti VARCHAR,
 Tahdet NUMERIC(5,0) NOT NULL
 )
 

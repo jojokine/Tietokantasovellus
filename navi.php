@@ -71,7 +71,7 @@ echo "Kirjaudu";
 <div id="kirj" style="background-color:#FFFFFF;height:50x;width:700px;">
 <?php
 if(isset($_SESSION['id'])){
-echo "Olet kirjautunut, " . $kayttaja->username . ". ";
+echo "Olet kirjautunut käyttäjänä: " . $kayttaja->username . ". ";
 }
 ?>
 <h2>Elektroninen Satamakirja</h2>

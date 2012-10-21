@@ -25,13 +25,5 @@ Sijainti(lng.): <input type="text" name="lng" /> <br />
 <input type="submit" value="Tallenna tiedot" /> 
 </form> </p>
 </div>
-<div id="kuva" style="background-color:#FFFFFF;height:300px;width:700px;float:left;">
-  <form enctype="multipart/form-data" action="image.php" method="POST">
-  <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-  <input type="hidden" name="name" size="25" length="25" value="<?php echo $satama->kayntisatamanumero; ?>">
-   Lisää satamalle kuva: <input name="userfile" type="file" size="25"/>
-
-  <input type="submit" value="Lisää kuva" />
-</form>
 </body>
 </html>

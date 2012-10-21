@@ -24,6 +24,10 @@ Sähköpostiosoite: <input type="text" name="email" VALUE="<?php echo $kayttaja-
 <form method="POST" action="vaihdaSalasana.php">
 	<input type="submit" value="Vaihda salasana" >
 </form>
+
+<a href="poistaKayttaja.php?kayttajaid=<?php echo $kayttaja->kayttajaid?>">Poista käyttäjätili</a>
+
+
 </div>
 </body>
 </html>

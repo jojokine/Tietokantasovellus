@@ -6,7 +6,7 @@ require('onkoKirjauduttu.php');
   $kysely->execute(array($haku));
   $haettavakayttaja = $kysely->fetch();
 
-if(!$haettavakayttaja["nayta"]){
+if(!$haettavakayttaja["nayta"] && $kayttaja->admin != 1){
 echo "Käyttäjä on suojannut tietonsa!";
 $ref = $_SERVER['HTTP_REFERER'];
 header( 'refresh: 2; url='.$ref);
@@ -34,6 +34,10 @@ exit;
 	<dt>Sähköpostiosoite:</dt>
 		<dd> <?php echo $haettavakayttaja["email"] ?> </dd>
 </dl>
+<?php
+			if($kayttaja->admin == 1){?>
+			<a href="poistaKayttaja.php?kayttajaid=<?php echo $haettavakayttaja["kayttajaid"]?>">Poista käyttäjä</a>
+<?php }?>
 </div>
 </body>
 </html>

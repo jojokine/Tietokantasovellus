@@ -11,8 +11,8 @@ $tahdet = $_POST["tahdet"];
 $sql = "INSERT INTO arvostelu (kayntisatamanumero, kayttajaid, kommentti, tahdet)
         VALUES (?, ?, ?, ?)";
 
-  $tarkistus = $yhteys->prepare("SELECT * FROM arvostelu WHERE kayttajaid = ?");
-  $tarkistus->execute(array($kayttaja->kayttajaid));
+  $tarkistus = $yhteys->prepare("SELECT * FROM arvostelu WHERE kayttajaid = ? AND kayntisatamanumero =?");
+  $tarkistus->execute(array($kayttaja->kayttajaid, $kayntisatamanumero));
   $arvio = $tarkistus->fetch();
 
 //var_dump($satama);

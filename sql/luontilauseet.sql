@@ -9,12 +9,6 @@ www VARCHAR(100),
 ViimeksiMuokannutKayttajaid INTEGER NOT NULL
 )
 
-CREATE TABLE chekin (ChekinID INTEGER AUTO_INCREMENT PRIMARY KEY,
-KayttajaID INTEGER FOREIGN KEY, 
-kayntisatamanumero INTEGER FOREIGN KEY,
-aika TIMESTAMP NOT NULL DEFAULT GETDATE()
-)
-
 CREATE TABLE kayttaja (KayttajaID SERIAL ,
 Nimi VARCHAR,
 VeneenTyyppi VARCHAR,
@@ -24,7 +18,8 @@ VeneenSyvays VARCHAR,
 username varchar NOT NULL,
 password varchar NOT NULL,
 email varchar NOT NULL,
-nayta boolean
+nayta boolean,
+admin INT
 )
 
 CREATE TABLE arvostelu (ArvosteluID SERIAL, 

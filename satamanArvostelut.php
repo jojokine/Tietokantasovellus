@@ -1,5 +1,6 @@
 <?php
   require_once('navi.php');
+include("haeKayttaja.php");
   $haku = $_GET['satama'];
   $kysely = $yhteys->prepare("SELECT * FROM arvostelu WHERE kayntisatamanumero = ?");
   $kysely->execute(array($haku));
@@ -25,7 +26,12 @@
 			?>
 			<a href="kayttaja.php?kayttajaid=<?php echo $muokkaaja->kayttajaid; ?>"><?php echo $muokkaaja->nimi; ?></a>
 			<?php
-			?> </td>
+			?> 
+		</td>
+		<td> <?php
+			if($kayttaja->admin == 1 || $kayttaja->kayttajaid == $muokkaaja->kayttajaid){?>
+			<a href="poistaArvio.php?arvio=<?php echo $rivi["arvosteluid"]?>">Poista arvio</a>
+<?php }?> </td>
  	    </tr>
 	<?php } ?>
    	</table>

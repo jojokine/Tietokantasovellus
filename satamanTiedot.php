@@ -1,6 +1,7 @@
 <?php 
 include("yhteys.php");
 require_once('navi.php');
+include("haeKayttaja.php");
 
 $haku = $_GET['satama'];
        
@@ -58,6 +59,11 @@ $muokkaaja = $muok->fetchObject();
 	<input type="hidden" name="satama" value="<?php echo $satama->kayntisatamanumero ?>" >
 	<input type="submit" value="Muokkaa satamaa" >
 </form>
+<?php
+			if($kayttaja->admin == 1){?>
+			<a href="poistaSatama.php?satama=<?php echo $satama->kayntisatamanumero?>">Poista satama</a>
+<?php }?>
+
 </div>
 </body>
 </html>
